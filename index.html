@@ -1,0 +1,172 @@
+{\rtf1\ansi\ansicpg936\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!doctype html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>\
+  <title>Ava English Boost</title>\
+  <link rel="stylesheet" href="styles.css">\
+</head>\
+<body>\
+  <!-- Top Bar (fixed) -->\
+  <header class="topbar">\
+    <button class="icon-btn" id="btnHome" aria-label="Home">\uc0\u55356 \u57312 </button>\
+    <div class="title" id="pageTitle">Today</div>\
+\
+    <div class="toggle">\
+      <span class="toggle-label">\uc0\u55356 \u56808 \u55356 \u56819 </span>\
+      <button class="toggle-btn" id="btnCN" aria-pressed="true">\uc0\u25552 \u31034  ON</button>\
+    </div>\
+  </header>\
+\
+  <main class="container">\
+    <!-- PAGE: Today -->\
+    <section class="page" id="page-today">\
+      <div class="card">\
+        <div class="big">12 minutes</div>\
+        <div class="small en">3 steps today</div>\
+        <div class="small cn">\uc0\u20170 \u22825 12\u20998 \u38047 \u65292 \u20570 \u19977 \u27493 </div>\
+      </div>\
+\
+      <div class="grid3">\
+        <button class="tile" id="tileWords">\
+          <div class="tile-title">Words (6)</div>\
+          <div class="tile-sub cn">\uc0\u35789 \u27719 \u65288 6\u20010 \u65289 </div>\
+          <div class="badge" id="badgeWords">\uc0\u9633 </div>\
+        </button>\
+\
+        <button class="tile" id="tileMath">\
+          <div class="tile-title">Math (1)</div>\
+          <div class="tile-sub cn">\uc0\u35835 \u39064 \u65288 1\u39064 \u65289 </div>\
+          <div class="badge" id="badgeMath">\uc0\u9633 </div>\
+        </button>\
+\
+        <button class="tile" id="tilePhonics">\
+          <div class="tile-title">Phonics (4 min)</div>\
+          <div class="tile-sub cn">\uc0\u25340 \u35835 \u65288 4\u20998 \u38047 \u65289 </div>\
+          <div class="badge" id="badgePhonics">\uc0\u9633 </div>\
+        </button>\
+      </div>\
+\
+      <button class="primary" id="btnStart">START</button>\
+      <div class="small en" id="streakText">Streak: 0 days</div>\
+      <div class="small cn">\uc0\u36830 \u32493 \u25171 \u21345 \u65306 <span id="streakCN">0</span>\u22825 </div>\
+    </section>\
+\
+    <!-- PAGE: Vocab -->\
+    <section class="page hidden" id="page-vocab">\
+      <div class="card">\
+        <div class="big">Today\'92s Words</div>\
+        <div class="small en" id="vocabCount">6 words</div>\
+        <div class="small cn">\uc0\u20170 \u26085 \u35789 \u27719 </div>\
+      </div>\
+\
+      <div class="card" id="wordCard">\
+        <div class="word-row">\
+          <div class="word" id="wordEN">total</div>\
+          <button class="icon-btn" id="btnSpeakWord" aria-label="Hear">\uc0\u55357 \u56586 </button>\
+        </div>\
+\
+        <div class="small en" id="wordDefEN">the whole amount</div>\
+        <div class="small cn" id="wordDefCN">\uc0\u24635 \u25968 /\u24635 \u21644 </div>\
+\
+        <div class="example en" id="wordExEN">What is the total number?</div>\
+        <div class="example cn" id="wordExCN">\uc0\u24635 \u25968 \u26159 \u22810 \u23569 \u65311 </div>\
+\
+        <div class="btn-row">\
+          <button class="btn good" data-status="know">\uc0\u9989  Know</button>\
+          <button class="btn mid" data-status="review">\uc0\u55357 \u56577  Review</button>\
+          <button class="btn warn" data-status="not_sure">\uc0\u10067  Not sure</button>\
+        </div>\
+      </div>\
+\
+      <div class="nav-row">\
+        <button class="btn" id="btnPrevWord">Back</button>\
+        <div class="dots" id="wordDots"></div>\
+        <button class="btn" id="btnNextWord">Next</button>\
+      </div>\
+\
+      <button class="primary" id="btnDoneWords">DONE \uc0\u8594  Math</button>\
+    </section>\
+\
+    <!-- PAGE: Math -->\
+    <section class="page hidden" id="page-math">\
+      <div class="card">\
+        <div class="big">Read the problem</div>\
+        <div class="small cn">\uc0\u35835 \u39064 \u19977 \u27493 \u27861 </div>\
+      </div>\
+\
+      <div class="card">\
+        <div class="problem" id="mathProblemText"></div>\
+\
+        <div class="chips" id="keywordChips"></div>\
+        <div class="hint cn" id="keywordHintCN"></div>\
+      </div>\
+\
+      <div class="card">\
+        <div class="step-title">I know</div>\
+        <div class="small cn">\uc0\u25226 \u24050 \u30693 \u20889 \u20986 \u26469 </div>\
+        <textarea class="textarea" id="inKnow" placeholder="Lily has ..."></textarea>\
+      </div>\
+\
+      <div class="card">\
+        <div class="step-title">I need</div>\
+        <div class="small cn">\uc0\u25105 \u35201 \u25214 \u20160 \u20040 </div>\
+        <textarea class="textarea" id="inNeed" placeholder="I need ..."></textarea>\
+      </div>\
+\
+      <div class="card">\
+        <div class="step-title">Equation</div>\
+        <div class="small cn">\uc0\u20889 \u31639 \u24335 </div>\
+        <input class="input" id="inEq" placeholder="__ + __ = __" />\
+      </div>\
+\
+      <div class="card">\
+        <div class="step-title">Answer</div>\
+        <div class="small cn">\uc0\u20889 \u31572 \u26696 </div>\
+        <input class="input" id="inAns" placeholder="Tom has __ candies." />\
+        <button class="primary" id="btnCheckMath">CHECK</button>\
+\
+        <div class="feedback" id="mathFeedback"></div>\
+        <button class="primary hidden" id="btnDoneMath">DONE \uc0\u8594  Phonics</button>\
+      </div>\
+    </section>\
+\
+    <!-- PAGE: Phonics -->\
+    <section class="page hidden" id="page-phonics">\
+      <div class="card">\
+        <div class="big">Today\'92s Sound</div>\
+        <div class="sound" id="phonicsSkillEN">short a</div>\
+        <div class="small en" id="phonicsSkillDescEN">a = /\'e6/ like "cat"</div>\
+        <div class="small cn" id="phonicsSkillDescCN">\uc0\u30701 a\u38899 \u65292 \u20687  cat</div>\
+      </div>\
+\
+      <div class="card">\
+        <div class="big">Practice</div>\
+        <div class="word-grid" id="phonicsWords"></div>\
+      </div>\
+\
+      <div class="card">\
+        <div class="big">Mini Game</div>\
+        <div class="small en">Listen & Pick</div>\
+        <div class="small cn">\uc0\u21548 \u38899 \u36873 \u35789 </div>\
+        <button class="btn" id="btnPlaySound">\uc0\u55357 \u56586  Play</button>\
+        <div class="btn-row" id="phonicsChoices"></div>\
+        <div class="feedback" id="phonicsFeedback"></div>\
+      </div>\
+\
+      <button class="primary" id="btnFinishToday">FINISH TODAY</button>\
+    </section>\
+  </main>\
+\
+  <script src="content.js"></script>\
+  <script src="app.js"></script>\
+</body>\
+</html>\
+}
